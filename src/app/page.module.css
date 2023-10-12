@@ -1,0 +1,44 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background-color: '#1A1222';
+}
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 0;
+}
+
+.logo {
+  position: relative;
+}
+.code {
+  font-family: 'Menlo', 'Monaco', 'Lucida Console', 'Liberation Mono',
+    'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
+  color: #7f77e0;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .center {
+    padding: 8rem 0 6rem;
+  }
+
+  .center::before {
+    transform: none;
+    height: 300px;
+  }
+}
