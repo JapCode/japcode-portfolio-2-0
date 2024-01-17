@@ -1,9 +1,9 @@
 import ContentComponent from '@/components/ContentComponent';
 import SkillComponent from '@/components/SkillComponent';
 import SwitchElement from '@/components/SwitchElement';
+import skills from '@/data/skills';
 import getDictionary from '@/lib/dictionary';
 import generateUniqueID from '@/utils/generateId';
-import recoverySkillsData from '@/utils/skills';
 import React from 'react';
 import { Locale } from '../../../i18n.config';
 import styles from './page.module.css';
@@ -14,7 +14,6 @@ const Home = async ({
   params: { lang: Locale };
 }): Promise<JSX.Element> => {
   const { home } = await getDictionary(lang);
-  const skills = await recoverySkillsData();
   return (
     <>
       <div className={styles.hero}>
@@ -41,15 +40,13 @@ const Home = async ({
         <ContentComponent.SubTitle>{home.skills}</ContentComponent.SubTitle>
 
         <div className={styles.skillsContainer}>
-          {skills
-            .sort((a, b) => a.order - b.order)
-            .map((element) => (
-              <SkillComponent
-                key={element.id}
-                title={element.title}
-                url={element.url}
-              />
-            ))}
+          {skills.map((element) => (
+            <SkillComponent
+              key={element.id}
+              title={element.name}
+              iconName={element.iconName}
+            />
+          ))}
         </div>
 
         <ContentComponent.SubTitle>{home.interest}</ContentComponent.SubTitle>
