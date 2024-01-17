@@ -1,0 +1,125 @@
+.navigationContainer {
+  padding-top: 20px;
+  padding-right: 40px;
+}
+
+.gridContainer {
+  grid-area: NavBar;
+  width: 100%;
+  top: 0;
+  position: sticky;
+}
+
+.navigationElements {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+}
+
+.element {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: 500;
+  font-stretch: 70%;
+  font-variation-settings:
+    'slnt' 0,
+    'wdth' 125;
+}
+
+@media (min-width: 701px) {
+  .element:hover {
+    background-color: #7f77e0;
+  }
+
+  .elementActive {
+    background-color: #7f77e0;
+  }
+  .menuButton {
+    display: none;
+  }
+  .mobileNavigationContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .mobileNavigationContainer {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--background-hex);
+    transition: top 0.3s ease-in-out;
+  }
+  .mobileNavigationElements {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+  }
+  .mobileNavigationElements li {
+    min-width: 200px;
+    text-align: center;
+  }
+  .mobileLink {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-mona);
+    font-stretch: 75%;
+    font-variation-settings:
+      'slnt' -8,
+      'wdth' 100;
+  }
+  .lang {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .lang li {
+    min-width: auto;
+  }
+
+  .menuButton {
+    all: unset;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+      opacity 0.3s ease-in-out,
+      right 0.3s ease-in-out,
+      top 0.3s ease-in-out;
+  }
+  .menuIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .menuButton:active {
+    opacity: 0;
+  }
+
+  .element {
+    border-bottom: 3px solid transparent;
+  }
+
+  .elementActive {
+    background-color: transparent;
+    border-bottom: 3px solid var(--secondary-hex);
+  }
+  .navigationContainer {
+    display: none;
+  }
+}

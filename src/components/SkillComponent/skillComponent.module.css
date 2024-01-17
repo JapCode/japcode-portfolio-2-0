@@ -1,0 +1,17 @@
+.container {
+  width: 100px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image {
+  height: 80%;
+}
+.nameContainer {
+  height: 20%;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+}

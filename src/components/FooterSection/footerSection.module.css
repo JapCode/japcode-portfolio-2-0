@@ -1,0 +1,20 @@
+.container {
+  padding: 30px 0 20px 0;
+}
+
+.elementContainer {
+  padding: 0 20px;
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.elementList {
+  list-style: none;
+}
+
+.elementIcon {
+  height: 25px;
+  width: 25px;
+}

@@ -8,10 +8,9 @@
   background-color: '#1A1222';
 }
 .title {
-  margin: 0;
   line-height: 1.15;
-  font-size: 2rem;
-  text-align: center;
+  font-size: 3rem;
+  max-width: 300px;
 }
 
 .center {
@@ -30,9 +29,46 @@
     'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
   color: #7f77e0;
 }
+.example {
+  display: flex;
+  align-items: center;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  border: 3px black;
+  pointer-events: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 15%;
+  gap: 40px;
+}
+
+.hero {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.skillsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 /* Mobile */
 @media (max-width: 700px) {
+  .hero {
+    padding-bottom: 0;
+    margin-bottom: -60px;
+  }
+  .skillsContainer {
+    flex-wrap: wrap;
+  }
   .center {
     padding: 8rem 0 6rem;
   }

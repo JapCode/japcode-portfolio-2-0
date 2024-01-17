@@ -1,0 +1,53 @@
+.labelElement {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  padding-top: 20px;
+}
+.labelName {
+  font-size: 14px;
+  font-family: var(--font-mona);
+  font-weight: 600;
+  font-stretch: 75%;
+  font-variation-settings:
+    'slnt' -8,
+    'wdth' 100;
+}
+
+.customInput {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-bottom-width: 2px;
+  border-color: transparent;
+  /* border-bottom-color: #fff; */
+  background-color: transparent;
+  color: var(--foreground-hex);
+  outline: none;
+  /* margin-bottom: 5px; */
+  caret-color: var(--secondary-hex);
+  font-family: var(--font-openSans);
+}
+.decorator {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  /* background: var(--foreground-hex); */
+  transition: width 0.3s;
+}
+
+.customInput:focus + .decorator {
+  width: 100%;
+}
+
+.errorMessage {
+  padding-top: 5px;
+  color: var(--errorTextColor-rgb);
+}
+
+@media (max-width: 700px) {
+  .labelElement {
+    width: 320px;
+  }
+}
