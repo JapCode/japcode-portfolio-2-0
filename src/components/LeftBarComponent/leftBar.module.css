@@ -1,0 +1,18 @@
+.elementContainer {
+  padding: 0 20px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-area: social;
+}
+
+.elementList {
+  list-style: none;
+}
+
+.elementIcon {
+  height: 25px;
+  width: 25px;
+}

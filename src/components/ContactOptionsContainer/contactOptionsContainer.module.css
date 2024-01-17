@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  min-height: 60vh;
+}
+
+.formContainer {
+  padding-top: 40px;
+}
+
+.buttonContainer {
+  padding-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  all: unset;
+  padding: 8px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-family: var(--font-mona);
+  font-weight: 600;
+  font-stretch: 75%;
+  font-variation-settings:
+    'slnt' -5,
+    'wdth' 100;
+}
+
+.buttonActive {
+  border-bottom: 2px solid var(--secondary-hex);
+}

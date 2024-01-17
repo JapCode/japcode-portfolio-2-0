@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .labelElement::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+} */
+
+.button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  /* width: 320px; */
+  width: 420px;
+  height: 48px;
+  background-color: var(--primary-hex);
+  color: var(--foreground-hex);
+  border-radius: 5px;
+}
+
+@media (max-width: 700px) {
+  .button {
+    width: 250px;
+  }
+}
