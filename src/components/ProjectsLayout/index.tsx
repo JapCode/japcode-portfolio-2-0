@@ -20,7 +20,7 @@ const ProjectsLayout: FC<IProjectsLayoutProps> = ({ data }): JSX.Element => {
     // <div className={styles.container}>
 
     <LayoutGroup>
-      <ProjectList selectedId={id} data={data} />
+      <ProjectList data={data} />
       <AnimatePresence>
         {id && imageHasLoaded && <OpenCard id={id} data={data} key="item" />}
       </AnimatePresence>

@@ -1,6 +1,6 @@
 'use client';
 
-import { INavigationContent } from '@/types/navigation';
+import { INavigation } from '@/types/dictionaries';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -10,7 +10,7 @@ import SwitchLanguages from '../SwitchLanguages';
 import styles from './navigation.module.css';
 
 interface INavigationComponent {
-  page: INavigationContent;
+  page: INavigation;
   locale: Locale;
 }
 

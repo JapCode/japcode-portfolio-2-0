@@ -1,8 +1,7 @@
 'use client';
 
-import { INavigationContent } from '@/types/navigation';
+import { INavigation } from '@/types/dictionaries';
 import capitalizeFirstLetter from '@/utils/CapitalizeFirstLetter';
-import { Icon } from '@iconify/react/dist/iconify.js';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -11,7 +10,7 @@ import { Locale, i18n } from '../../../i18n.config';
 import styles from './switchLanguages.module.css';
 
 interface ISwitchLanguagesProps {
-  page: INavigationContent;
+  page: INavigation;
   lang: Locale;
 }
 
@@ -61,7 +60,7 @@ const SwitchLanguages: FC<ISwitchLanguagesProps> = ({
     setIsOpen(!isOpen);
   };
 
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent): void => {
@@ -82,7 +81,22 @@ const SwitchLanguages: FC<ISwitchLanguagesProps> = ({
       <button className={styles.button} type="button" onClick={toggleHoverMenu}>
         <span>
           {capitalizeFirstLetter(lang)}
-          <Icon icon="ep:arrow-down-bold" className={styles.buttonIcon} />
+          {/* <Icon icon="ep:arrow-down-bold" className={styles.buttonIcon} /> */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={styles.buttonIcon}
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 9l6 6l6 -6" />
+          </svg>
         </span>
       </button>
       <motion.div className="menu-item">

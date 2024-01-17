@@ -1,6 +1,6 @@
 'use client';
 
-import { IProjectData } from '@/types/project';
+import { IProjectListData } from '@/types/project';
 import formatDate from '@/utils/formatDate';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -8,7 +8,7 @@ import { FC } from 'react';
 import style from './projectCard.module.css';
 
 interface IProjectCardProps {
-  data: IProjectData;
+  data: IProjectListData;
 }
 
 const ProjectCard: FC<IProjectCardProps> = ({ data }): JSX.Element => {
