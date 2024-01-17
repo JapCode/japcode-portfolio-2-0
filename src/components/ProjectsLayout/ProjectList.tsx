@@ -4,14 +4,11 @@ import ProjectCard from '../ProjectCard';
 import styles from './projectsLayout.module.css';
 
 interface IProjectListProps {
-  selectedId: string;
+  // selectedId: string;
   data: IProjectListData[];
 }
 
-const ProjectList: FC<IProjectListProps> = ({
-  selectedId,
-  data,
-}): JSX.Element => {
+const ProjectList: FC<IProjectListProps> = ({ data }): JSX.Element => {
   return (
     <ul className={styles.cardListContainer}>
       {data.map((card) => (

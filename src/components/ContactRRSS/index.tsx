@@ -30,7 +30,6 @@ const ContactRRSS: FC<IContactRRSSProps> = ({
         type="button"
         className={style.button}
         onClick={(): void => {
-          console.log('social');
           optionSelect(link);
         }}
       >
