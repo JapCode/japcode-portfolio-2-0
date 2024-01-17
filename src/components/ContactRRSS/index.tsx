@@ -1,7 +1,7 @@
 'use client';
 
-import { Icon } from '@iconify/react';
 import { FC } from 'react';
+import SocialIcon from '../SocialIcon';
 import style from './contactRRSS.module.css';
 
 interface IContactRRSSProps {
@@ -20,10 +20,26 @@ const ContactRRSS: FC<IContactRRSSProps> = ({
   return (
     <div className={style.contactContainer}>
       <div className={style.linkContainer}>
-        <Icon icon={icon} className={style.elementIcon} />
+        <SocialIcon iconName={icon} className={style.elementIcon} />
         <span>{accountName}</span>
         <a target="_blank" rel="noopener" href={link}>
-          <Icon icon="fluent:open-24-filled" className={style.elementIcon} />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={style.elementIcon}
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+            <path d="M11 13l9 -9" />
+            <path d="M15 4h5v5" />
+          </svg>
         </a>
       </div>
       <button
@@ -33,7 +49,32 @@ const ContactRRSS: FC<IContactRRSSProps> = ({
           optionSelect(link);
         }}
       >
-        <Icon icon="clarity:qr-code-line" className={style.buttonIcon} />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={style.buttonIcon}
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+          <path d="M7 17l0 .01" />
+          <path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+          <path d="M7 7l0 .01" />
+          <path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+          <path d="M17 7l0 .01" />
+          <path d="M14 14l3 0" />
+          <path d="M20 14l0 .01" />
+          <path d="M14 14l0 3" />
+          <path d="M14 20l3 0" />
+          <path d="M17 17l3 0" />
+          <path d="M20 17l0 3" />
+        </svg>
       </button>
     </div>
   );
