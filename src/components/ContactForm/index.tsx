@@ -1,15 +1,17 @@
-import { IContactContent } from '@/types/contact';
+import { sendEmail } from '@/app/_actions';
 import { FormData } from '@/types/content';
+import { IContactSection } from '@/types/dictionaries';
 import { sendMessageSchema } from '@/zodSchema/sendMessage';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import InputComponent from '../InputComponent';
 import TextAreaComponent from '../TextAreaCompoonent';
 import style from './contactForm.module.css';
 
 interface IContactForm {
-  page: IContactContent;
+  page: IContactSection;
 }
 
 const ContactForm: FC<IContactForm> = ({ page }): JSX.Element => {
@@ -23,9 +25,15 @@ const ContactForm: FC<IContactForm> = ({ page }): JSX.Element => {
 
   function onSubmit(data: FormData): void {
     // event.preventDefault();
-    console.log(data);
-    // const formData = new FormData(event.currentTarget);
-    // sendMessage(formData);
+    const result = sendEmail(data);
+
+    toast.promise(result, {
+      loading: page.form.toast.loading,
+      success: () => {
+        return page.form.toast.success;
+      },
+      error: page.form.toast.error,
+    });
   }
   return (
     <form className={style.container} onSubmit={handleSubmit(onSubmit)}>

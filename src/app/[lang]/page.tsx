@@ -30,12 +30,13 @@ const Home = async ({
         </ContentComponent.Header>
 
         <ContentComponent.SubTitle>{home.about}</ContentComponent.SubTitle>
-
-        {home.aboutMeContent.map((content) => (
-          <ContentComponent.Paragraph key={generateUniqueID()}>
-            {content}
-          </ContentComponent.Paragraph>
-        ))}
+        <ContentComponent.ParagraphContainer>
+          {home.aboutMeContent.map((content) => (
+            <ContentComponent.Paragraph key={generateUniqueID()}>
+              {content}
+            </ContentComponent.Paragraph>
+          ))}
+        </ContentComponent.ParagraphContainer>
 
         <ContentComponent.SubTitle>{home.skills}</ContentComponent.SubTitle>
 
@@ -51,11 +52,13 @@ const Home = async ({
 
         <ContentComponent.SubTitle>{home.interest}</ContentComponent.SubTitle>
 
-        {home.interestContent.map((content) => (
-          <ContentComponent.Paragraph key={generateUniqueID()}>
-            {content}
-          </ContentComponent.Paragraph>
-        ))}
+        <ContentComponent.ParagraphContainer>
+          {home.interestContent.map((content) => (
+            <ContentComponent.Paragraph key={generateUniqueID()}>
+              {content}
+            </ContentComponent.Paragraph>
+          ))}
+        </ContentComponent.ParagraphContainer>
       </ContentComponent>
     </>
   );

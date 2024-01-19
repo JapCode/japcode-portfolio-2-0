@@ -83,7 +83,7 @@
           "Una de las funcionalidades clave incluye la capacidad de que los usuarios compren entradas para el próximo partido a través de una integración con MercadoPago, ofreciendo una solución de pago conveniente y segura.",
           "Desarrollada con React Native, Expo y Typescript, la aplicación proporciona una experiencia multiplataforma sin comprometer la calidad del código y la escalabilidad."
         ],
-        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2F16570362211682616913.jpg?alt=media&token=f93c9cb1-4f3c-4b8f-bf65-8119697502c2"
+        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2FsanMartin.jpg?alt=media&token=6a070e98-842e-4b4b-80c1-991440e9b4d5"
       },
       {
         "id": "3",
@@ -99,7 +99,7 @@
           "Dentro de la aplicación, los usuarios pueden conectarse al VPN (configurado para un país específico según la solicitud del cliente) utilizando WireGuard y su biblioteca de túneles.",
           "Implementada en Kotlin y Java, la aplicación proporciona una solución segura y eficiente para que los empleados naveguen por Internet de manera segura dentro del país especificado."
         ],
-        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2F16570362211682616913.jpg?alt=media&token=f93c9cb1-4f3c-4b8f-bf65-8119697502c2"
+        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2FvpnFridayNet.png?alt=media&token=279c6f28-abfd-4321-b248-20a1985db505"
       },
       {
         "id": "4",
@@ -143,7 +143,12 @@
         "subject": "¿Cuál es el propósito de tu aventura de mensajes?",
         "message": "Crea tu mensaje con glifos místicos..."
       },
-      "sendButton": "Enviar"
+      "sendButton": "Enviar",
+      "toast": {
+        "loading": "Cargando...",
+        "success": "Gracias por tu mensaje",
+        "error": "Ops ha ocurrido un error"
+      }
     }
   }
 }

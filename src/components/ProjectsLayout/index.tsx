@@ -4,7 +4,7 @@ import { IProjectListData } from '@/types/project';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { FC } from 'react';
-import OpenCard from './OpenCard';
+import OpenCard from '../ProjectCardOpen/OpenCard';
 import ProjectList from './ProjectList';
 
 interface IProjectsLayoutProps {

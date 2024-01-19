@@ -43,6 +43,11 @@
   margin-left: -4px;
   background-color: var(--secondary-hex);
 }
+.paragraphContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 .paragraph {
   word-spacing: 4px;
   line-height: normal;

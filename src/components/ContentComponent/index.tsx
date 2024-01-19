@@ -19,6 +19,9 @@ interface SubTitleProps {
 interface ParagraphProps {
   children: ReactNode;
 }
+interface ParagraphContainerProps {
+  children: ReactNode;
+}
 
 interface CustomLinkProps {
   href: string;
@@ -41,6 +44,9 @@ const Header: FC<HeaderProps> = ({ children, barWidth = '30%', subTitle }) => (
 const SubTitle: FC<SubTitleProps> = ({ children }) => (
   <h2 className={styles.subTitle}>{children}</h2>
 );
+const ParagraphContainer: FC<ParagraphContainerProps> = ({ children }) => (
+  <article className={styles.paragraphContainer}>{children}</article>
+);
 const Paragraph: FC<ParagraphProps> = ({ children }) => (
   <p className={styles.paragraph}>{children}</p>
 );
@@ -61,6 +67,7 @@ interface ContentComponentComposition {
   Header: FC<HeaderProps>;
   SubTitle: FC<SubTitleProps>;
   Paragraph: FC<ParagraphProps>;
+  ParagraphContainer: FC<ParagraphContainerProps>;
   CustomLink: FC<CustomLinkProps>;
   CustomButton: FC<CustomButtonProps>;
 }
@@ -75,6 +82,7 @@ const ContentComponent: FC<ContentComponentProps> &
 ContentComponent.Header = Header;
 ContentComponent.SubTitle = SubTitle;
 ContentComponent.Paragraph = Paragraph;
+ContentComponent.ParagraphContainer = ParagraphContainer;
 ContentComponent.CustomLink = CustomLink;
 ContentComponent.CustomButton = CustomButton;
 

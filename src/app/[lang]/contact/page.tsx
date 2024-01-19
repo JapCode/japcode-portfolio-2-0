@@ -16,12 +16,13 @@ const ContactPage = async ({
       <ContentComponent.SubTitle>
         {contactSection.contact}
       </ContentComponent.SubTitle>
-
-      {contactSection.contactContent.map((content) => (
-        <ContentComponent.Paragraph key={generateUniqueID()}>
-          {content}
-        </ContentComponent.Paragraph>
-      ))}
+      <ContentComponent.ParagraphContainer>
+        {contactSection.contactContent.map((content) => (
+          <ContentComponent.Paragraph key={generateUniqueID()}>
+            {content}
+          </ContentComponent.Paragraph>
+        ))}
+      </ContentComponent.ParagraphContainer>
       <ContactOptionsContainer page={contactSection} />
     </ContentComponent>
   );

@@ -1,3 +1,8 @@
+.motionContainer {
+  width: 360px;
+  height: 205px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -109,9 +114,16 @@
 }
 
 @media (max-width: 700px) {
-  .container {
+  .container,
+  .motionContainer {
     width: 100%;
     max-width: 360px;
     height: 190px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .languagesContainer {
+    max-width: 150px;
   }
 }

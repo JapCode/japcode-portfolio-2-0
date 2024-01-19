@@ -6,7 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC } from 'react';
-import secondStyle from './projectsLayout.module.css';
+import ContentComponent from '../ContentComponent';
+import style from './projectCardOpen.module.css';
 
 interface IOpenCardProps {
   id: string;
@@ -27,15 +28,13 @@ const OpenCard: FC<IOpenCardProps> = ({ data, id }): JSX.Element => {
         exit={{ opacity: 0, transition: { duration: 0.15 } }}
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: 'auto' }}
-        className={secondStyle.overlay}
+        className={style.overlay}
       >
         <Link href={pathname} />
       </motion.div>
-      <div
-        className={`${secondStyle['card-content-container']} ${secondStyle.open}`}
-      >
+      <div className={`${style['card-content-container']} ${style.open}`}>
         <motion.div
-          className={secondStyle['card-content']}
+          className={style['card-content']}
           layoutId={`card-container-${id}`}
         >
           <motion.button
@@ -43,11 +42,11 @@ const OpenCard: FC<IOpenCardProps> = ({ data, id }): JSX.Element => {
               width: 55,
               transition: { duration: 0.5 },
             }}
-            className={secondStyle.backButton}
+            className={style.backButton}
           >
             <Link href={pathname}>
               <svg
-                className={secondStyle.arrowSvgActive}
+                className={style.arrowSvgActive}
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
                 height="14"
@@ -66,11 +65,11 @@ const OpenCard: FC<IOpenCardProps> = ({ data, id }): JSX.Element => {
             </Link>
           </motion.button>
           <motion.figure
-            className={secondStyle['card-image-container']}
+            className={style['card-image-container']}
             layoutId={`card-image-container-${id}`}
           >
             <Image
-              className={secondStyle.cardImage}
+              className={style.cardImage}
               src={image}
               alt="test"
               width={700}
@@ -78,16 +77,16 @@ const OpenCard: FC<IOpenCardProps> = ({ data, id }): JSX.Element => {
             />
           </motion.figure>
           <motion.div
-            className={secondStyle['title-container']}
+            className={style['title-container']}
             layoutId={`title-container-${id}`}
           >
             <h2>{name}</h2>
-            <span className={secondStyle.subInfoContainer}>
+            <span className={style.subInfoContainer}>
               <motion.span layoutId={`date-container-${id}`}>
                 {formatDate(date)}
               </motion.span>
               <motion.span
-                className={secondStyle.subInfoLanguages}
+                className={style.subInfoLanguages}
                 layoutId={`languages-container-${id}`}
               >
                 {languages.map((element) => (
@@ -96,11 +95,18 @@ const OpenCard: FC<IOpenCardProps> = ({ data, id }): JSX.Element => {
               </motion.span>
             </span>
           </motion.div>
-          <motion.div className={secondStyle.contentContainer} animate>
-            {description.map((element) => (
-              <p key={element.length}>{element}</p>
-            ))}
+          <motion.div className={style.contentContainer} animate>
+            <ContentComponent.ParagraphContainer>
+              {description.map((element) => (
+                <ContentComponent.Paragraph
+                  key={element.length + Math.random()}
+                >
+                  {element}
+                </ContentComponent.Paragraph>
+              ))}
+            </ContentComponent.ParagraphContainer>
           </motion.div>
+          {/* <div className={style.bottom} /> */}
         </motion.div>
       </div>
     </>

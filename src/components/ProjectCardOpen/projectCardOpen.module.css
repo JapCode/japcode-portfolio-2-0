@@ -1,0 +1,217 @@
+.overlay {
+  z-index: 1;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  will-change: opacity;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  /* max-width: 990px; */
+}
+.overlay a {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.card-content-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  pointer-events: none;
+}
+
+.card-content-container.open {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+  padding: 90px 0;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.card-content {
+  pointer-events: auto;
+  position: relative;
+  border-radius: 10px;
+  background: #281e35;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  /* max-height: 70vh; */
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.open .card-content {
+  height: auto;
+  max-width: 700px;
+  overflow: hidden;
+  /* pointer-events: none; */
+  padding-bottom: 20px;
+}
+/* .content-container {
+  padding: 460px 35px 35px 35px;
+  max-width: 700px;
+  width: 90vw;
+} */
+
+.card-image-container {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.title-container {
+  padding: 15px 20px;
+  width: 100%;
+}
+.title-container h2 {
+  font-family: var(--font-mona);
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-stretch: 75%;
+  font-variation-settings:
+    'slnt' 0,
+    'wdth' 125;
+}
+.title-container span {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.subInfoContainer {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: var(--font-hubot);
+}
+
+.subInfoLanguages {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.contentContainer {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.backButton {
+  all: unset;
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  background-color: var(--background-hex);
+  border-radius: 50px;
+  height: 37px;
+  width: 37px;
+}
+.backButton a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowSvgActive {
+  margin-left: 2px;
+}
+
+.arrowSvgActive path {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease; /* Adding transitions for scaling and opacity */
+}
+
+.arrowSvgActive path:nth-child(1) {
+  opacity: 0; /* Initially set the opacity to 0 */
+  transform: translate(10px);
+}
+.arrowSvgActive path {
+  transform: translate(0);
+  /* fill: #aaa; */
+}
+
+.backButton:hover .arrowSvgActive {
+  /* width: 55px; */
+  /* margin-left: -5px; */
+  transform: translate(-3px);
+}
+.backButton:hover .arrowSvgActive path:nth-child(1) {
+  fill: #fff;
+  transform: translate(0);
+  opacity: 1; /* Make the first path visible on hover */
+}
+
+.backButton:hover .arrowSvgActive path:nth-child(2) {
+  /* fill: var(--secondary-hex); */
+  fill: #fff;
+  transform: translate(0);
+}
+
+.bottom {
+  display: block;
+  height: 50px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .card-content-container.open {
+    padding-top: 30px;
+  }
+  .open .card-content {
+    max-width: 90%;
+    max-height: 90vh;
+  }
+  .subInfoContainer {
+    font-size: 11px;
+  }
+  .subInfoLanguages {
+    max-width: 180px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .title-container h2 {
+    font-size: 1.6rem;
+  }
+  .contentContainer {
+    max-height: calc(90vh - 450px);
+    padding-right: 10px;
+  }
+
+  .cardImage {
+    height: 200px;
+  }
+}
