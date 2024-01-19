@@ -44,7 +44,7 @@
           "Key functionalities encompass the registration of each payment in the database, user login facilitating secure and straightforward payments, an administration panel for the admin role with robust search and filtering capabilities in payment records, and the ability to easily enable or disable preferred platforms.",
           "Developed using Express and vanilla JavaScript on the backend, with MongoDB serving as the database. This backend serves as the backbone for the company's website, communicating through a RESTful API."
         ],
-        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2Fimg3.jpg?alt=media&token=4d7cc2fb-4e74-45dd-9cb4-de9a35147cb1"
+        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2Fcliente.fonet.com.ve.png?alt=media&token=66393cec-c35b-47df-a8b9-13b101a684cd"
       },
       {
         "id": "1",
@@ -65,7 +65,7 @@
           "Upon receiving a correct file, a socket connection is established, waiting for the Flask server to respond with analysis results. The outcome is stored in a MySQL database linked to the user's query, and the response is sent to the frontend through the socket.",
           "The Flask backend, executing Slither, was Dockerized for flexibility in deployment. The main server was constructed with Nest.js, TypeScript, Prisma, and MySQL."
         ],
-        "image": "/img3"
+        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2F16570362211682616913.jpg?alt=media&token=f93c9cb1-4f3c-4b8f-bf65-8119697502c2"
       },
       {
         "id": "2",
@@ -82,7 +82,7 @@
           "One of the key functionalities includes the ability for users to purchase tickets for the upcoming match through an integration with MercadoPago, offering a convenient and secure payment solution.",
           "Built with React Native, Expo, and Typescript, the app delivers a cross-platform experience while maintaining code quality and scalability."
         ],
-        "image": "/img4"
+        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2FsanMartin.jpg?alt=media&token=6a070e98-842e-4b4b-80c1-991440e9b4d5"
       },
       {
         "id": "3",
@@ -98,7 +98,7 @@
           "Within the app, users can connect to the VPN (configured to a specific country as per client's request) using WireGuard and its tunneling library.",
           "Implemented in Kotlin and Java, the app provides a secure and streamlined solution for employees to navigate the internet safely within the specified country."
         ],
-        "image": "/img5"
+        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2FvpnFridayNet.png?alt=media&token=279c6f28-abfd-4321-b248-20a1985db505"
       },
       {
         "id": "4",
@@ -115,7 +115,7 @@
           "Users can view their associated records or those relevant to their user type, with the ability to edit or delete entries. The backend, developed with Nest.js, Typescript, and MySQL, ensures seamless data management and accessibility.",
           "Built using React Native, Expo, and Typescript, the app provides a user-friendly interface and efficient fleet management solutions for Transportex."
         ],
-        "image": "/img6"
+        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2Fimg3.jpg?alt=media&token=4d7cc2fb-4e74-45dd-9cb4-de9a35147cb1"
       }
     ]
   },
@@ -142,7 +142,12 @@
         "subject": "What's the purpose of your message adventure?",
         "message": "Craft your message with mystical glyphs..."
       },
-      "sendButton": "Send"
+      "sendButton": "Send",
+      "toast": {
+        "loading": "Loading...",
+        "success": "Thanks for your message",
+        "error": "Ops something was happen"
+      }
     }
   }
 }

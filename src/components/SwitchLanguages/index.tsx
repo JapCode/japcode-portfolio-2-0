@@ -2,9 +2,10 @@
 
 import { INavigation } from '@/types/dictionaries';
 import capitalizeFirstLetter from '@/utils/CapitalizeFirstLetter';
+import generateUniqueIdFront from '@/utils/generateIdFront';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { FC, useEffect, useRef, useState } from 'react';
 import { Locale, i18n } from '../../../i18n.config';
 import styles from './switchLanguages.module.css';
@@ -25,13 +26,15 @@ const SwitchLanguages: FC<ISwitchLanguagesProps> = ({
   lang,
 }): JSX.Element => {
   const pathName = usePathname();
+  const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
 
   const redirectedPathName = (locale: string): string => {
     if (!pathName) return '/';
+    const params = new URLSearchParams(searchParams);
     const segments = pathName.split('/');
     segments[1] = locale;
-    return segments.join('/');
+    return `${segments.join('/')}?${params.toString()}`;
   };
 
   const subMenuAnimate = {
@@ -88,11 +91,11 @@ const SwitchLanguages: FC<ISwitchLanguagesProps> = ({
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="currentColor"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M6 9l6 6l6 -6" />
@@ -110,7 +113,7 @@ const SwitchLanguages: FC<ISwitchLanguagesProps> = ({
           <ul className={styles.optionsMenu}>
             {i18n.locales.map((locale) => {
               return (
-                <li key={locale}>
+                <li key={generateUniqueIdFront()}>
                   <Link
                     className={styles.optionItem}
                     href={redirectedPathName(locale)}

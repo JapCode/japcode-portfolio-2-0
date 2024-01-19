@@ -1,6 +1,6 @@
 'use client';
 
-import { IContactContent } from '@/types/contact';
+import { IContactSection } from '@/types/dictionaries';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FC } from 'react';
 import ContactForm from '../ContactForm';
@@ -8,7 +8,7 @@ import ContactRRSSContainer from '../ContactRRSSContainer';
 import styles from './contactOptionsContainer.module.css';
 
 interface IContactOptionsContainer {
-  page: IContactContent;
+  page: IContactSection;
 }
 
 const ContactOptionsContainer: FC<IContactOptionsContainer> = ({

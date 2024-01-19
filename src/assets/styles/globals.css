@@ -5,9 +5,13 @@
   --foreground-hex: #f0f2fd;
   --background-hex: #1a1222;
   --primary-hex: #7f77e0;
-  --secondary-hex: rgb(240, 0, 136);
+  --secondary-hex: #f00088;
   --greyColor-hex: #bdbdbd;
   --errorTextColor-rgb: rgb(243, 104, 127);
+
+  --primary-active-hex: #5d4ab8;
+  --primary-hover-hex: #6c5ad1;
+  --greyColor-hover-hex: #969696;
 
   --boxShadowIcon: rgba(240, 0, 136, 0.2) 0px 5px 20px;
   --boxShadowCard: rgba(240, 0, 136, 0.1) 0px 15px 20px;
@@ -88,5 +92,5 @@ p {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--secondary-hex);
+  background-color: var(--greyColor-hover-hex);
 }

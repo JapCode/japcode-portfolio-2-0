@@ -26,6 +26,27 @@
   background-color: var(--primary-hex);
   color: var(--foreground-hex);
   border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(
+    --primary-hover-hex
+  ); /* Cambia el color al pasar el mouse sobre el botón */
+}
+
+.button:active {
+  background-color: var(
+    --primary-active-hex
+  ); /* Cambia el color al hacer clic en el botón */
+  transform: translateY(
+    2px
+  ); /* Agrega un desplazamiento hacia abajo al hacer clic */
+}
+
+.customToas {
+  border-radius: 0;
+  background-color: aquamarine;
 }
 
 @media (max-width: 700px) {

@@ -13,7 +13,10 @@ interface IProjectCardProps {
 
 const ProjectCard: FC<IProjectCardProps> = ({ data }): JSX.Element => {
   return (
-    <motion.div layoutId={`card-container-${data.id}`}>
+    <motion.div
+      layoutId={`card-container-${data.id}`}
+      className={style.motionContainer}
+    >
       <Link
         type="button"
         className={style.container}

@@ -54,6 +54,11 @@ export interface IContactSection {
       message: string;
     };
     sendButton: string;
+    toast: {
+      loading: string;
+      success: string;
+      error: string;
+    };
   };
 }
 
