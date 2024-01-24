@@ -1,153 +1,204 @@
 {
-  "navigation": {
-    "home": "home",
-    "projects": "projects",
-    "contacts": "Contact",
-    "languages": {
-      "es": "Spanish",
-      "en": "English"
-    }
-  },
-  "home": {
-    "welcome": ["Hello, I'm", " Alonso Paredes"],
-    "subTitle": "FullStack Developer",
-    "about": "About me",
-    "aboutMeContent": [
-      "Greetings from my digital space! I'm Alonso Paredes, a passionate FullStack Developer with over 2 years immersed in the coding universe. I embarked on this journey drawn by the fascination of hacking and discovered the transformative power of software.",
-      "Specializing in technologies like React and TypeScript, my journey has been a constant challenge and learning experience. From complex integrations to picking up new languages on the fly, each step has been an opportunity to refine my approach.",
-      "Simplicity in design and persistence in the pursuit of perfection are the pillars of my philosophy. I believe in turning challenges into opportunities, finding inspiration in every corner to create impactful digital experiences.",
-      "Welcome to explore my world of innovation and development, where each line of code tells a story of passion and dedication. Ready to immerse yourself in the magic of software development?"
-    ],
-    "skills": "Skills",
-    "interest": "Interest",
-    "interestContent": [
-      "In software development, I am particularly passionate about artificial intelligence, mobile development, and exploring emerging technologies like Astro. I am always learning and staying updated.",
-      "Outside of code, I enjoy collaborating with other developers and find inspiration in board games, music, animation, and art. My balance between professional and personal life lies in creative diversity.",
-      "My influences include figures like Miguel Ángel Durán García, also known as midudev, and Oscar Barajas, as well as innovative companies like OpenAI and Vercel. Beyond the technological realm, I seek inspiration in books, manga, series, movies, anime, and video games.",
-      "Exploring these worlds not only enriches me as a developer but also adds a unique touch to my perspective!"
-    ]
-  },
-  "projectsSection": {
-    "projects": "projects",
-    "projectsList": [
-      {
-        "id": "0",
-        "name": "Payment Management System - Fonet (Backend)",
-        "date": "2022-09-10",
-        "languages": [
-          { "id": "0", "name": "Express.js" },
-          { "id": "1", "name": "MongoDB" },
-          { "id": "2", "name": "Node.js" }
-        ],
-        "description": [
-          "Fonet Payment Management System is a comprehensive solution designed to handle monthly payments for the services offered by the client, particularly tailored for internet service providers. The platform features an intuitive interface that seamlessly interacts with the internal service to efficiently manage the services provided to the client. Furthermore, it seamlessly integrates with various APIs from national banks and payment platforms to deliver a holistic user experience.",
-          "Key functionalities encompass the registration of each payment in the database, user login facilitating secure and straightforward payments, an administration panel for the admin role with robust search and filtering capabilities in payment records, and the ability to easily enable or disable preferred platforms.",
-          "Developed using Express and vanilla JavaScript on the backend, with MongoDB serving as the database. This backend serves as the backbone for the company's website, communicating through a RESTful API."
-        ],
-        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2Fcliente.fonet.com.ve.png?alt=media&token=66393cec-c35b-47df-a8b9-13b101a684cd"
-      },
-      {
-        "id": "1",
-        "name": "Smart Contract Vulnerability Analysis System",
-        "date": "2023-02-24",
-        "languages": [
-          { "id": "0", "name": "Flask" },
-          { "id": "1", "name": "Python" },
-          { "id": "2", "name": "Nest.js" },
-          { "id": "3", "name": "Typescript" },
-          { "id": "4", "name": "MySql" }
-        ],
-        "description": [
-          "Developed an API in Flask for the Smart Contract Vulnerability Analysis System, a solution that utilizes the Slither tool— a smart contract static analyzer— as per the client's request.",
-          "To enhance the existing Nest.js backend, a specialized backend was created with a primary function: to receive Smart Contracts at an endpoint and return a response with identified vulnerabilities, which is then processed in the Nest.js backend.",
-          "To accommodate varying scanning times and tiered user access, a queue system was implemented, prioritizing users based on their tier.",
-          "On the Nest.js backend, tasks related to the Smart Contract were managed. A WebSocket facilitated interaction between the backend (Nest.js) and the frontend, allowing for efficient handling of different analysis process times.",
-          "Upon receiving a correct file, a socket connection is established, waiting for the Flask server to respond with analysis results. The outcome is stored in a MySQL database linked to the user's query, and the response is sent to the frontend through the socket.",
-          "The Flask backend, executing Slither, was Dockerized for flexibility in deployment. The main server was constructed with Nest.js, TypeScript, Prisma, and MySQL."
-        ],
-        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2F16570362211682616913.jpg?alt=media&token=f93c9cb1-4f3c-4b8f-bf65-8119697502c2"
-      },
-      {
-        "id": "2",
-        "name": "Football Club App",
-        "date": "2023-05-10",
-        "languages": [
-          { "id": "0", "name": "React Native" },
-          { "id": "1", "name": "Expo" },
-          { "id": "2", "name": "Typescript" }
-        ],
-        "description": [
-          "Developed a mobile application for Android dedicated to the football team, providing users with real-time updates on match results, upcoming game schedules, team-related news, and videos.",
-          "The app features user authentication and login using JSON Web Tokens (JWT). Users can manage their accounts seamlessly within the app, ensuring a personalized experience.",
-          "One of the key functionalities includes the ability for users to purchase tickets for the upcoming match through an integration with MercadoPago, offering a convenient and secure payment solution.",
-          "Built with React Native, Expo, and Typescript, the app delivers a cross-platform experience while maintaining code quality and scalability."
-        ],
-        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2FsanMartin.jpg?alt=media&token=6a070e98-842e-4b4b-80c1-991440e9b4d5"
-      },
-      {
-        "id": "3",
-        "name": "Secure VPN for Internal Company Use",
-        "date": "2023-07-27",
-        "languages": [
-          { "id": "0", "name": "Kotlin" },
-          { "id": "1", "name": "Java" }
-        ],
-        "description": [
-          "Developed a mobile application for Android designed for internal use within a company, featuring a simple VPN solution to ensure secure browsing in a specific country.",
-          "The app allows employees to log in with their email. For new users or unforeseen circumstances, a request for access is sent via email, and approval by an admin is required. Once approved, the user gains access to the app.",
-          "Within the app, users can connect to the VPN (configured to a specific country as per client's request) using WireGuard and its tunneling library.",
-          "Implemented in Kotlin and Java, the app provides a secure and streamlined solution for employees to navigate the internet safely within the specified country."
-        ],
-        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2FvpnFridayNet.png?alt=media&token=279c6f28-abfd-4321-b248-20a1985db505"
-      },
-      {
-        "id": "4",
-        "name": "Transportex Fleet Management App",
-        "date": "2023-10-02",
-        "languages": [
-          { "id": "0", "name": "React Native" },
-          { "id": "1", "name": "Expo" },
-          { "id": "2", "name": "Typescript" }
-        ],
-        "description": [
-          "Developed a comprehensive mobile application for Transportex, focusing on fleet management. The app was executed in two phases, with the first phase dedicated to building the app's foundation and a single functionality, and the second phase expanding to include two additional functionalities.",
-          "The application features a robust system that connects to a dedicated database for each company. Each company can have multiple profiles for user logins. The app's functionalities include recording vehicle mileage and travel time, logging items for transport with brief descriptions, and the ability to attach images to these records.",
-          "Users can view their associated records or those relevant to their user type, with the ability to edit or delete entries. The backend, developed with Nest.js, Typescript, and MySQL, ensures seamless data management and accessibility.",
-          "Built using React Native, Expo, and Typescript, the app provides a user-friendly interface and efficient fleet management solutions for Transportex."
-        ],
-        "image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2Fimg3.jpg?alt=media&token=4d7cc2fb-4e74-45dd-9cb4-de9a35147cb1"
-      }
-    ]
-  },
-  "contactSection": {
-    "contact": "contact",
-    "contactContent": [
-      "Thank you for visiting my digital space! I'm excited to connect with you. Whether you want to discuss exciting projects, explore collaboration opportunities, or simply chat about the fascinating world of development, I'm here.",
-      "Feel free to send me a message! I'm eager to hear your ideas and be part of new and exciting conversations. Let's create amazing things together!"
-    ],
-    "buttons": {
-      "socialMedia": "Social Media",
-      "directMessage": "Direct Message"
-    },
-    "form": {
-      "labels": {
-        "name": "Whats your name?",
-        "email": "Email",
-        "subject": "subject",
-        "message": "message"
-      },
-      "placeholders": {
-        "name": "Enter your alias or real name, your choice!",
-        "email": "Where should the magic emails be sent?",
-        "subject": "What's the purpose of your message adventure?",
-        "message": "Craft your message with mystical glyphs..."
-      },
-      "sendButton": "Send",
-      "toast": {
-        "loading": "Loading...",
-        "success": "Thanks for your message",
-        "error": "Ops something was happen"
-      }
-    }
-  }
+	"navigation": {
+		"home": "Home",
+		"projects": "Projects",
+		"contacts": "Contact",
+		"languages": {
+			"es": "Spanish",
+			"en": "English"
+		}
+	},
+	"home": {
+		"welcome": [
+			"Hello, I'm",
+			" Alonso Paredes"
+		],
+		"subTitle": "FullStack Developer",
+		"about": "About me",
+		"aboutMeContent": [
+			"Greetings from my digital space! I'm Alonso Paredes, a passionate FullStack Developer with over 2 years immersed in the coding universe. I embarked on this journey drawn by the fascination of hacking and discovered the transformative power of software.",
+			"Specializing in technologies like React and TypeScript, my journey has been a constant challenge and learning experience. From complex integrations to picking up new languages on the fly, each step has been an opportunity to refine my approach.",
+			"Simplicity in design and persistence in the pursuit of perfection are the pillars of my philosophy. I believe in turning challenges into opportunities, finding inspiration in every corner to create impactful digital experiences.",
+			"Welcome to explore my world of innovation and development, where each line of code tells a story of passion and dedication. Ready to immerse yourself in the magic of software development?"
+		],
+		"skills": "Skills",
+		"interest": "Interest",
+		"interestContent": [
+			"In software development, I am particularly passionate about artificial intelligence, mobile development, and exploring emerging technologies like Astro. I am always learning and staying updated.",
+			"Outside of code, I enjoy collaborating with other developers and find inspiration in board games, music, animation, and art. My balance between professional and personal life lies in creative diversity.",
+			"My influences include figures like Miguel Ángel Durán García, also known as midudev, and Oscar Barajas, as well as innovative companies like OpenAI and Vercel. Beyond the technological realm, I seek inspiration in books, manga, series, movies, anime, and video games.",
+			"Exploring these worlds not only enriches me as a developer but also adds a unique touch to my perspective!"
+		]
+	},
+	"projectsSection": {
+		"projects": "projects",
+		"projectsList": [
+			{
+				"id": "0",
+				"name": "Payment Management System - Fonet (Backend)",
+				"date": "2022-09-10",
+				"languages": [
+					{
+						"id": "0",
+						"name": "Express.js"
+					},
+					{
+						"id": "1",
+						"name": "MongoDB"
+					},
+					{
+						"id": "2",
+						"name": "Node.js"
+					}
+				],
+				"description": [
+					"Fonet Payment Management System is a comprehensive solution designed to handle monthly payments for the services offered by the client, particularly tailored for internet service providers. The platform features an intuitive interface that seamlessly interacts with the internal service to efficiently manage the services provided to the client. Furthermore, it seamlessly integrates with various APIs from national banks and payment platforms to deliver a holistic user experience.",
+					"Key functionalities encompass the registration of each payment in the database, user login facilitating secure and straightforward payments, an administration panel for the admin role with robust search and filtering capabilities in payment records, and the ability to easily enable or disable preferred platforms.",
+					"Developed using Express and vanilla JavaScript on the backend, with MongoDB serving as the database. This backend serves as the backbone for the company's website, communicating through a RESTful API."
+				],
+				"image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2Fcliente.fonet.com.ve.png?alt=media&token=66393cec-c35b-47df-a8b9-13b101a684cd"
+			},
+			{
+				"id": "1",
+				"name": "Smart Contract Vulnerability Analysis System",
+				"date": "2023-02-24",
+				"languages": [
+					{
+						"id": "0",
+						"name": "Flask"
+					},
+					{
+						"id": "1",
+						"name": "Python"
+					},
+					{
+						"id": "2",
+						"name": "Nest.js"
+					},
+					{
+						"id": "3",
+						"name": "Typescript"
+					},
+					{
+						"id": "4",
+						"name": "MySql"
+					}
+				],
+				"description": [
+					"Developed an API in Flask for the Smart Contract Vulnerability Analysis System, a solution that utilizes the Slither tool— a smart contract static analyzer— as per the client's request.",
+					"To enhance the existing Nest.js backend, a specialized backend was created with a primary function: to receive Smart Contracts at an endpoint and return a response with identified vulnerabilities, which is then processed in the Nest.js backend.",
+					"To accommodate varying scanning times and tiered user access, a queue system was implemented, prioritizing users based on their tier.",
+					"On the Nest.js backend, tasks related to the Smart Contract were managed. A WebSocket facilitated interaction between the backend (Nest.js) and the frontend, allowing for efficient handling of different analysis process times.",
+					"Upon receiving a correct file, a socket connection is established, waiting for the Flask server to respond with analysis results. The outcome is stored in a MySQL database linked to the user's query, and the response is sent to the frontend through the socket.",
+					"The Flask backend, executing Slither, was Dockerized for flexibility in deployment. The main server was constructed with Nest.js, TypeScript, Prisma, and MySQL."
+				],
+				"image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2F16570362211682616913.jpg?alt=media&token=f93c9cb1-4f3c-4b8f-bf65-8119697502c2"
+			},
+			{
+				"id": "2",
+				"name": "Football Club App",
+				"date": "2023-05-10",
+				"languages": [
+					{
+						"id": "0",
+						"name": "React Native"
+					},
+					{
+						"id": "1",
+						"name": "Expo"
+					},
+					{
+						"id": "2",
+						"name": "Typescript"
+					}
+				],
+				"description": [
+					"Developed a mobile application for Android dedicated to the football team, providing users with real-time updates on match results, upcoming game schedules, team-related news, and videos.",
+					"The app features user authentication and login using JSON Web Tokens (JWT). Users can manage their accounts seamlessly within the app, ensuring a personalized experience.",
+					"One of the key functionalities includes the ability for users to purchase tickets for the upcoming match through an integration with MercadoPago, offering a convenient and secure payment solution.",
+					"Built with React Native, Expo, and Typescript, the app delivers a cross-platform experience while maintaining code quality and scalability."
+				],
+				"image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2FsanMartin.jpg?alt=media&token=6a070e98-842e-4b4b-80c1-991440e9b4d5"
+			},
+			{
+				"id": "3",
+				"name": "Secure VPN for Internal Company Use",
+				"date": "2023-07-27",
+				"languages": [
+					{
+						"id": "0",
+						"name": "Kotlin"
+					},
+					{
+						"id": "1",
+						"name": "Java"
+					}
+				],
+				"description": [
+					"Developed a mobile application for Android designed for internal use within a company, featuring a simple VPN solution to ensure secure browsing in a specific country.",
+					"The app allows employees to log in with their email. For new users or unforeseen circumstances, a request for access is sent via email, and approval by an admin is required. Once approved, the user gains access to the app.",
+					"Within the app, users can connect to the VPN (configured to a specific country as per client's request) using WireGuard and its tunneling library.",
+					"Implemented in Kotlin and Java, the app provides a secure and streamlined solution for employees to navigate the internet safely within the specified country."
+				],
+				"image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2FvpnFridayNet.png?alt=media&token=279c6f28-abfd-4321-b248-20a1985db505"
+			},
+			{
+				"id": "4",
+				"name": "Transportex Fleet Management App",
+				"date": "2023-10-02",
+				"languages": [
+					{
+						"id": "0",
+						"name": "React Native"
+					},
+					{
+						"id": "1",
+						"name": "Expo"
+					},
+					{
+						"id": "2",
+						"name": "Typescript"
+					}
+				],
+				"description": [
+					"Developed a comprehensive mobile application for Transportex, focusing on fleet management. The app was executed in two phases, with the first phase dedicated to building the app's foundation and a single functionality, and the second phase expanding to include two additional functionalities.",
+					"The application features a robust system that connects to a dedicated database for each company. Each company can have multiple profiles for user logins. The app's functionalities include recording vehicle mileage and travel time, logging items for transport with brief descriptions, and the ability to attach images to these records.",
+					"Users can view their associated records or those relevant to their user type, with the ability to edit or delete entries. The backend, developed with Nest.js, Typescript, and MySQL, ensures seamless data management and accessibility.",
+					"Built using React Native, Expo, and Typescript, the app provides a user-friendly interface and efficient fleet management solutions for Transportex."
+				],
+				"image": "https://firebasestorage.googleapis.com/v0/b/img-uploaded.appspot.com/o/images%2Fimg3.jpg?alt=media&token=4d7cc2fb-4e74-45dd-9cb4-de9a35147cb1"
+			}
+		]
+	},
+	"contactSection": {
+		"contact": "contact",
+		"contactContent": [
+			"Thank you for visiting my digital space! I'm excited to connect with you. Whether you want to discuss exciting projects, explore collaboration opportunities, or simply chat about the fascinating world of development, I'm here.",
+			"Feel free to send me a message! I'm eager to hear your ideas and be part of new and exciting conversations. Let's create amazing things together!"
+		],
+		"buttons": {
+			"socialMedia": "Social Media",
+			"directMessage": "Direct Message"
+		},
+		"form": {
+			"labels": {
+				"name": "Whats your name?",
+				"email": "Email",
+				"subject": "subject",
+				"message": "message"
+			},
+			"placeholders": {
+				"name": "Enter your alias or real name, your choice!",
+				"email": "Where should the magic emails be sent?",
+				"subject": "What's the purpose of your message adventure?",
+				"message": "Craft your message with mystical glyphs..."
+			},
+			"sendButton": "Send",
+			"toast": {
+				"loading": "Loading...",
+				"success": "Thanks for your message",
+				"error": "Ops something was happen"
+			}
+		}
+	}
 }

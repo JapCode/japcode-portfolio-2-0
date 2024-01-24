@@ -12,21 +12,10 @@ const ProjectsPage = async ({
   const { projectsSection } = await getDictionary(lang);
   return (
     <ContentComponent>
-      <ContentComponent.SubTitle>Project</ContentComponent.SubTitle>
-      <div
-        className={styles.container}
-        // style={{
-        //   width: '100%',
-        //   paddingTop: 30,
-        //   flexDirection: 'row',
-        //   justifyContent: 'center',
-        //   alignItems: 'center',
-        //   columnGap: 20,
-        //   rowGap: 30,
-        //   display: 'flex',
-        //   flexWrap: 'wrap',
-        // }}
-      >
+      <ContentComponent.SubTitle>
+        {projectsSection.projects}
+      </ContentComponent.SubTitle>
+      <div className={styles.container}>
         {/* {projects.map((element) => (
           <ProjectCard key={element.id} data={element} />
         ))} */}
