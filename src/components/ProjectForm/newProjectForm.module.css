@@ -1,0 +1,159 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Grupos de formulario */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-block: 1rem;
+}
+
+/* Labels */
+.label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Inputs & textarea */
+.input,
+.textArea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background-color: transparent;
+  color: var(--foreground-hex);
+  border: 1px solid var(--background-glass-rgba);
+  border-radius: var(--border-radius, 8px);
+  outline: none;
+  font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.input:focus,
+.textArea:focus {
+  border-color: var(--primary-hex);
+}
+
+/* Textarea */
+.textArea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* Contador */
+.counter {
+  position: absolute;
+  bottom: 1.6rem; /* padding of formGroup class */
+  right: 0.75rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--foreground-hex);
+}
+
+/* Editor */
+.editor {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--background-glass-rgba);
+  border-radius: var(--border-radius, 8px);
+  overflow: hidden;
+}
+
+/* Botones */
+.fullscreenContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.fullscreenBtn,
+.saveBtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.fullscreenBtn {
+  background: transparent;
+  color: var(--primary-hex);
+  border: none;
+}
+
+.saveBtn {
+  background-color: var(--primary-hex);
+  color: #fff;
+  border: none;
+  height: 2.5rem;
+  padding: 0.6rem 1.2rem;
+  font-weight: 800;
+  font-family: var(--font-mona);
+}
+
+.saveBtn:not(:disabled):hover {
+  background-color: var(--primary-hover-hex);
+}
+.saveBtn:disabled {
+  background-color: var(--background-glass-rgba);
+  cursor: not-allowed;
+}
+
+.fullScreenBtn {
+  all: unset;
+  border-radius: 5px;
+  border: 1px solid var(--foreground-hex);
+  padding: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+.fullScreenBtn:hover {
+  opacity: 1;
+  border: 1px solid var(--primary-hex);
+  color: var(--primary-hex);
+  /* background-color: var(--background-glass-rgba); */
+}
+
+.fullScreenPreview {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.fullScreenPreviewContent {
+  width: 90%;
+  height: calc(100% - 2rem);
+  max-width: var(--max-width);
+  background-color: var(--background-hex);
+  border-radius: var(--border-radius);
+  /* padding: 1rem; */
+  padding-left: 1rem;
+  padding-right: 0.2rem;
+  margin: 1rem auto;
+  overflow: auto;
+  position: relative;
+
+  resize: horizontal; /* 👈 allow resizing */
+  min-width: 300px; /* 👈 prevent collapsing */
+  max-width: 100%; /* 👈 prevent breaking out */
+}

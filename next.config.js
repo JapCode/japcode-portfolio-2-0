@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ['firebasestorage.googleapis.com'],
   },
+  experimental: {
+    viewTransition: true,
+  },
 };
 
 module.exports = nextConfig;

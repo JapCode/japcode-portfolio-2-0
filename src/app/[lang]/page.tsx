@@ -8,11 +8,12 @@ import React from 'react';
 import { Locale } from '../../../i18n.config';
 import styles from './page.module.css';
 
-const Home = async ({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}): Promise<JSX.Element> => {
+const Home = async (
+  props: Readonly<{
+    params: Promise<{ lang: Locale }>;
+  }>,
+) => {
+  const { lang } = await props.params;
   const { home } = await getDictionary(lang);
   return (
     <>

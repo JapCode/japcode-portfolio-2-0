@@ -1,6 +1,6 @@
 .navigationContainer {
   padding-top: 20px;
-  padding-right: 40px;
+  /* padding-right: 40px; */
 }
 
 .gridContainer {
@@ -16,16 +16,25 @@
   justify-content: flex-end;
   align-items: center;
   list-style: none;
+  gap: 10px;
 }
 
 .element {
+  display: flex;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
   padding: 5px 10px;
+  border-radius: 5px;
   cursor: pointer;
+  font-family: var(--font-mona);
   font-weight: 500;
   font-stretch: 70%;
+  transition: background-color 0.3s ease-in-out;
   font-variation-settings:
-    'slnt' 0,
-    'wdth' 125;
+    'slnt' -10,
+    'wdth' 105;
+  color: var(--text-color-hex);
 }
 
 @media (min-width: 701px) {
@@ -34,7 +43,9 @@
   }
 
   .elementActive {
-    background-color: #7f77e0;
+    /* background-color: #7f77e0; */
+    color: var(--foreground-rgb);
+    background-color: var(--primary-hex);
   }
   .menuButton {
     display: none;

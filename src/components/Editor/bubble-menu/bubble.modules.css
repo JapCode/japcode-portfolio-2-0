@@ -1,0 +1,27 @@
+.bubble-container {
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  background-color: var(--background-hex);
+  border-radius: var(--primary-hex);
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.bubble-menu-button {
+  all: unset;
+  height: 20px;
+  padding: 0.3rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+
+.bubble-menu-button:hover,
+.is-active {
+  background-color: var(--background-glass-rgba);
+}

@@ -1,0 +1,110 @@
+.wrapper {
+  width: 260px;
+  background-color: transparent;
+  color: var(--foreground-hex);
+  border: 1px solid var(--background-glass-rgba);
+  border-radius: var(--border-radius, 8px);
+  position: relative;
+}
+
+.control {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, var(--card), rgba(11, 18, 32, 0.9));
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.selected {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.placeholder {
+  color: var(--muted);
+}
+.chev {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+  /* background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  ); */
+  background-color: var(--background-hex);
+  backdrop-filter: blur(6px);
+  z-index: 40;
+}
+
+.searchWrap {
+  padding: 4px 6px 8px 6px;
+}
+.search {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.02);
+  color: white;
+  outline: none;
+}
+
+.list {
+  max-height: 210px;
+  overflow: auto;
+  margin: 6px 0 0 0;
+  padding: 4px;
+  list-style: none;
+}
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+/* .option:hover {
+  transform: translateY(-1px);
+} */
+.highlight {
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.12);
+  background: rgba(124, 58, 237, 0.04);
+}
+.optionLabel {
+  font-size: 14px;
+}
+.optionMeta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 10px;
+}
+.empty {
+  padding: 10px;
+  color: var(--muted);
+}
+
+/* small responsive tweak */
+@media (max-width: 420px) {
+  .wrapper {
+    width: 100%;
+  }
+}

@@ -1,0 +1,173 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  border-radius: 0.5rem;
+  background: transparent;
+  overflow: hidden;
+}
+
+.card-header {
+  text-align: center;
+  padding: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.card-description {
+  text-wrap-style: pretty;
+  color: var(--foreground-hex);
+  font-size: 0.875rem;
+  padding-top: 0.5rem;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border: none;
+  font-weight: 700;
+  background-color: var(--primary-hex);
+  color: var(--foreground-hex);
+}
+
+.btn-outline {
+  background: var(--background-hex);
+  border: 1px solid #d1d5db;
+  color: var(--foreground-hex);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #d1d5db;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.divider-label {
+  background: #281e35;
+  position: relative;
+  z-index: 1;
+  padding: 0 0.5rem;
+}
+
+.form-fields {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form-group input {
+  border: 1px solid rgba(240, 0, 136, 0.1);
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  caret-color: white;
+  color: var(--foreground-hex);
+  background-color: var(--background-hex);
+}
+.form-group input:focus {
+  outline: none;
+  /* border-color: rgba(240, 0, 136, 0.3); */
+  box-shadow: 0 0 0 2px var(--primary-hex);
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forgot-link {
+  font-size: 0.875rem;
+  text-decoration: underline;
+  color: var(--primary-hex);
+}
+
+.home-link {
+  font-size: 0.875rem;
+  text-decoration: underline;
+  color: var(--primary-hex);
+}
+
+.signup-text {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.signup-text a {
+  text-decoration: underline;
+  color: var(--primary-hex);
+}
+
+/* .terms-text {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.terms-text a {
+  text-decoration: underline;
+  color: #3b82f6;
+} */

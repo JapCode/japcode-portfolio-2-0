@@ -8,7 +8,7 @@ const ContactPage = async ({
   params: { lang },
 }: {
   params: { lang: Locale };
-}): Promise<JSX.Element> => {
+}) => {
   const { contactSection } = await getDictionary(lang);
 
   return (

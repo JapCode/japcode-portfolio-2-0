@@ -21,10 +21,7 @@ interface ISwitchLanguagesProps {
 //   }
 // ]
 
-const SwitchLanguages: FC<ISwitchLanguagesProps> = ({
-  page,
-  lang,
-}): JSX.Element => {
+const SwitchLanguages: FC<ISwitchLanguagesProps> = ({ page, lang }) => {
   const pathName = usePathname();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);

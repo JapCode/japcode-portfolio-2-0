@@ -1,6 +1,6 @@
 'use client';
 
-import { IProjectListData } from '@/types/project';
+import { TProject } from '@/db/schema';
 import formatDate from '@/utils/formatDate';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -8,10 +8,10 @@ import { FC } from 'react';
 import style from './projectCard.module.css';
 
 interface IProjectCardProps {
-  data: IProjectListData;
+  data: TProject;
 }
 
-const ProjectCard: FC<IProjectCardProps> = ({ data }): JSX.Element => {
+const ProjectCard: FC<IProjectCardProps> = ({ data }) => {
   return (
     <motion.div
       layoutId={`card-container-${data.id}`}
@@ -24,19 +24,19 @@ const ProjectCard: FC<IProjectCardProps> = ({ data }): JSX.Element => {
       >
         <div className={style.topElementContainer}>
           <motion.span layoutId={`date-container-${data.id}`}>
-            {formatDate(data.date)}
+            {formatDate(data.createdAt.toISOString())}
           </motion.span>
           <motion.span
             className={style.languagesContainer}
-            layoutId={`languages-container-${data.id}`}
+            layoutId={`tags-container-${data.id}`}
           >
-            {data.languages.map((element) => (
-              <p key={element.id}>{element.name}</p>
+            {data.tags.map((element) => (
+              <p key={element}>{element}</p>
             ))}
           </motion.span>
         </div>
         <motion.div layoutId={`title-container-${data.id}`}>
-          <h3 className={style.title}>{data.name}</h3>
+          <h3 className={style.title}>{data.title}</h3>
           <div className={style.viewContainer}>
             <span>View</span>
             <svg

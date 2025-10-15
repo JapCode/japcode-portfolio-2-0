@@ -1,13 +1,20 @@
+/* @import '../styles/_variables.scss';
+@import '../styles/_keyframe-animations.scss'; */
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
 
   --foreground-hex: #f0f2fd;
+  --foreground-rgb: 240, 242, 253;
+  --text-color-hex: #d9d1f4;
   --background-hex: #1a1222;
   --primary-hex: #7f77e0;
+  --background-glass-rgba: rgba(255, 255, 255, 0.1);
   --secondary-hex: #f00088;
   --greyColor-hex: #bdbdbd;
   --errorTextColor-rgb: rgb(243, 104, 127);
+  --accent-color-rgb: rgba(240, 0, 136, 0.2);
 
   --primary-active-hex: #5d4ab8;
   --primary-hover-hex: #6c5ad1;
@@ -15,7 +22,18 @@
 
   --boxShadowIcon: rgba(240, 0, 136, 0.2) 0px 5px 20px;
   --boxShadowCard: rgba(240, 0, 136, 0.1) 0px 15px 20px;
+
+  /* tiptap */
+  --todo-checkbox-size: 16px;
+  --todo-checkbox-radius: 4px;
+  --todo-transition: 0.2s ease;
 }
+
+/* @theme {
+  --color-midnight: #121063;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+} */
 
 * {
   box-sizing: border-box;
@@ -75,9 +93,9 @@ p {
   }
 }
 
-/* custom scrollbar */
+/* custom scrollbar
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 18px;
 }
 
 ::-webkit-scrollbar-track {
@@ -93,4 +111,417 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--greyColor-hover-hex);
+} */
+
+::-webkit-scrollbar {
+  display: none;
+}
+.cs-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* .admin-page-layout {
+  display: flex;
+  width: 100%;
+} */
+
+.admin-page-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  /* gap: 1rem; */
+  padding-right: 1rem;
+}
+.admin-sidebar {
+  display: block;
+}
+@media (max-width: 700px) {
+  .admin-page-layout {
+    padding: 0;
+  }
+  .admin-sidebar {
+    display: none;
+  }
+}
+
+@media (min-width: 701px) {
+  .admin-mobile {
+    display: none;
+  }
+}
+.admin-main {
+  flex: 1;
+  /* padding: 2rem; */
+  overflow-y: auto;
+  /* background-color: rgba(255, 255, 255, 0.05); */
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  min-width: 0;
+  width: 100%;
+  justify-content: start;
+}
+
+.layout-body {
+  position: relative;
+  z-index: 0;
+}
+
+.layout-body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    125% 125% at 50% 100%,
+    var(--background-hex) 40%,
+    #f000881a 100%
+  );
+  max-height: 100vh;
+  pointer-events: none;
+}
+
+.glass-effect {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* .tiptap h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+.ProseMirror h1,
+.ProseMirror h2 {
+  font-weight: 700;
+  margin: 1em 0 0.5em;
+}
+
+.ProseMirror ul {
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.ProseMirror {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-height: 300px;
+} */
+
+/* .ProseMirror {
+  min-height: 40vh;
+  border: 2px solid peru;
+  border-radius: 10px;
+  outline: none;
+  padding: 1em;
+} */
+
+.tiptap {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  /* background: var(--background-glass-rgba); */
+  /* backdrop-filter: blur(6px); */
+  /* border-radius: var(--border-radius); */
+  padding: 1.2rem;
+  /* padding: 0px; */
+  color: var(--foreground-hex);
+  /* max-width: var(--max-width); */
+  max-width: none;
+  margin: auto;
+  /* overflow: scroll; */
+  /* max-height: 80vh; */
+  /* box-shadow: var(--boxShadowCard); */
+  width: 100%;
+}
+
+.tiptap.ProseMirror {
+  margin: 0;
+}
+
+.tiptap:focus-visible {
+  outline: none;
+}
+
+/* Párrafos con buen espaciado */
+.tiptap p {
+  color: var(--foreground-hex);
+  margin: 0.75em 0;
+  font-size: 1rem;
+  /* overflow-y: scroll;
+  max-height: 60vh; */
+}
+
+/* Encabezados bien diferenciados */
+.tiptap h1 {
+  font-size: 2em;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+.tiptap h2 {
+  font-size: 1.75em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.tiptap h1,
+.tiptap h2,
+.tiptap h3 {
+  font-weight: bold;
+}
+
+/* Cita estilo Notion */
+.tiptap blockquote {
+  color: var(--greyColor-hex);
+  border-left: 3px solid var(--primary-hex);
+  /* background: rgba(var(--foreground-rgb), 0.05); */
+  padding-left: 1rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  margin: 0.75em 0;
+}
+
+/* Listas bien separadas */
+.tiptap ul,
+.tiptap ol {
+  margin: 0.75em 1.25em;
+}
+.tiptap li {
+  margin-bottom: 0.35em;
+}
+
+/* Código en línea */
+.tiptap code {
+  background: rgba(var(--foreground-rgb), 0.08);
+  color: var(--foreground-hex);
+  font-family: 'Fira Code', monospace;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Bloques de código */
+.tiptap pre {
+  /* background: rgba(var(--foreground-rgb), 0.08); */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(var(--foreground-rgb), 0.1);
+  border-radius: 6px;
+  padding: 12px;
+  overflow-x: auto;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.tiptap pre code {
+  background: none;
+  color: var(--foreground-hex);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.tiptap hr {
+  border: none;
+  border-top: 1px solid rgba(var(--foreground-rgb), 0.15);
+  margin: 1.5rem 0;
+}
+
+.tiptap ::selection {
+  background: var(--primary-hover-hex);
+  color: var(--foreground-hex);
+}
+
+.tiptap mark {
+  background-color: var(--secondary-hex);
+  color: var(--foreground-hex);
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+/* Lista base */
+.tiptap ul[data-type='taskList'] {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+/* Cada ítem */
+.tiptap ul[data-type='taskList'] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 4px 0;
+}
+
+/* Label + checkbox */
+.tiptap ul[data-type='taskList'] li > label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+}
+
+/* Checkbox input */
+.tiptap ul[data-type='taskList'] li input[type='checkbox'] {
+  appearance: none;
+  width: var(--todo-checkbox-size);
+  height: var(--todo-checkbox-size);
+  border: 2px solid var(--greyColor-hex);
+  border-radius: var(--todo-checkbox-radius);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--todo-transition);
+  position: relative;
+}
+
+/* Hover y focus */
+.tiptap ul[data-type='taskList'] li input[type='checkbox']:hover,
+.tiptap ul[data-type='taskList'] li input[type='checkbox']:focus {
+  border-color: var(--primary-hex);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--primary-active-hex), 0.3);
+}
+
+/* Estado marcado */
+.tiptap ul[data-type='taskList'] li input[type='checkbox']:checked {
+  background: var(--primary-hex);
+  border-color: var(--primary-hex);
+  box-shadow: var(--boxShadowIcon);
+}
+
+/* Check mark centrado */
+.tiptap ul[data-type='taskList'] li input[type='checkbox']:checked::after {
+  content: '✓';
+  font-size: 12px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -55%);
+}
+
+/* tiptap image */
+
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Texto */
+.tiptap ul[data-type='taskList'] li p {
+  margin: 0;
+  flex: 1;
+  color: var(--foreground-hex);
+  transition: opacity var(--todo-transition);
+}
+
+/* Texto tachado */
+.tiptap ul[data-type='taskList'] li[data-checked='true'] p {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Efecto sutil de "glow" al pasar el mouse */
+.tiptap hr:hover {
+  border-color: var(--primary-hex);
+  box-shadow: 0 0 4px var(--primary-hex);
+}
+
+/* Separator (Horizontal Rule) */
+/* .tiptap hr {
+    border: none;
+    border-top: 2px solid rgba(var(--foreground-rgb), 0.1);
+    margin: 1.5rem 0;
+    position: relative;
+  } */
+
+.resizable-image-wrapper {
+  display: block;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.resizable-image-wrapper[data-align='left'] {
+  display: block;
+  margin: 0; /* pegada a la izquierda */
+}
+
+.resizable-image-wrapper[data-align='center'] {
+  display: block;
+  margin: 0 auto; /* centrada */
+}
+
+.resizable-image-wrapper[data-align='right'] {
+  display: block;
+  margin-left: auto; /* pegada a la derecha */
+  margin-right: 0;
+}
+
+.resize-handle {
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: ew-resize;
+  transform: translateY(-50%);
+  border-radius: 3px;
+}
+
+.resizable-image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 1rem auto;
+}
+
+.resizable-image-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.resize-handle {
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 30%;
+  cursor: ew-resize;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  background: transparent;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.resize-handle:hover {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.resize-handle.left {
+  left: 1px;
+}
+
+.resize-handle.right {
+  right: 1px;
+}
+
+/* page transition */
+/* @view-transition (article-image) {
+  navigation: auto;
+}
+#article-image {
+  view-transition-name: article-image;
+}
+::view-transition-group(*) {
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+} */
+
+::view-transition-old(experimental-label),
+::view-transition-new(experimental-label) {
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
 }

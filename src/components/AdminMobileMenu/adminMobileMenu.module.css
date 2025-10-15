@@ -1,0 +1,58 @@
+.menuBtn {
+  border-radius: 100%;
+  border: 1px solid var(--foreground-hex);
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  color: var(--foreground-hex);
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 110;
+}
+
+.menuWrapper {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-hex);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.menuElements {
+  background: var(--white);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.menuElements li {
+  width: 70%;
+}
+
+.menuElements button {
+  all: unset;
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--greyColor-hex);
+}
+
+.separator {
+  margin-block: 8px;
+  height: 1px;
+  width: 100%;
+  background-color: var(--background-glass-rgba);
+}

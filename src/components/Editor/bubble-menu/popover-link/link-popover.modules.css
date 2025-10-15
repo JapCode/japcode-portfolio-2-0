@@ -1,0 +1,87 @@
+.link-popover-container {
+  all: unset;
+  position: relative;
+  display: inline-block;
+}
+
+/* .link-button {
+  all: unset;
+  padding: 0.3rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link-button-icon {
+  width: 15px;
+  height: 15px;
+} */
+
+.link-button.active {
+  background-color: var(--background-glass-rgba);
+  color: var(--primary-hex);
+}
+.link-button:hover {
+  background-color: var(--background-glass-rgba);
+}
+
+.link-popover {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 320px;
+  background: var(--background-hex);
+  border: 1px solid var(--primary-hex);
+  padding: 6px 10px;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link-input {
+  all: unset;
+  width: 100%;
+  padding: 6px 0px 6px 8px;
+  font-size: 14px;
+  background-color: transparent;
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: rgba(var(--foreground-rgb), 0.7);
+}
+
+.popover-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.link-button-options {
+  all: unset;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  color: rgba(var(--foreground-rgb), 0.7);
+}
+.link-button-options:hover {
+  color: var(--primary-hex);
+  /* background-color: var(--background-glass-rgba); */
+}
+
+.link-button-options-link-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.link-divider {
+  background-color: rgba(var(--foreground-rgb), 0.4);
+  height: 1.5rem;
+  width: 1px;
+  margin-right: 2px;
+  margin-left: 2px;
+}

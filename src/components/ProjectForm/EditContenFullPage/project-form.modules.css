@@ -1,0 +1,99 @@
+.editContentFullPage-container {
+  display: flex;
+  flex-direction: column;
+  /* width: 90vw; */
+  width: 100%;
+  height: calc(100vh - 2rem);
+  margin: 1rem;
+}
+
+.editContentFullPage-actions-container {
+  height: 2rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+.editContentFullPage-actions-container button {
+  all: unset;
+  border-radius: 5px;
+  border: 1px solid var(--foreground-hex);
+  padding: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+.editContentFullPage-actions-container button:hover {
+  opacity: 1;
+  border: 1px solid var(--primary-hex);
+  color: var(--primary-hex);
+  /* background-color: var(--background-glass-rgba); */
+}
+
+.editContentFullPage-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  gap: 1%;
+  width: 100%;
+}
+
+.editContentFullPage-editor-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-glass-rgba);
+  height: fit-content;
+  overflow: hidden;
+  /* overflow: scroll;
+  max-height: 80vh; */
+  border-radius: var(--border-radius);
+  /* max-width: 40%; */
+  position: relative;
+}
+
+.editContentFullPage-preview {
+  /* height: fit-content; */
+  /* max-width: 320px; */
+  /* overflow: auto; */
+  /* background-color: var(--background-glass-rgba); */
+  background-color: var(--background-hex);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(240, 0, 136, 0.2);
+  /* padding: 10px; */
+  overflow: hidden;
+}
+
+.editContentFullPage-preview-dialog {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.editContentFullPage-preview-dialog-content {
+  width: 90%;
+  height: calc(100% - 2rem);
+  max-width: var(--max-width);
+  background-color: var(--background-hex);
+  border-radius: var(--border-radius);
+  /* padding: 1rem; */
+  padding-left: 1rem;
+  padding-right: 0.2rem;
+  margin: 1rem auto;
+  overflow: auto;
+  position: relative;
+}
+
+.editContentFullPage-preview-dialog-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 101;
+}

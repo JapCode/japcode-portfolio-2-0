@@ -32,3 +32,8 @@ export interface IProjectPageData {
   projects: string;
   projectsList: IProjectListData;
 }
+
+export interface SupabaseUploadResult {
+  path: string;
+  fullPath?: string;
+}

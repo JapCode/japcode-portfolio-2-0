@@ -2,7 +2,7 @@
   position: relative;
   margin-left: 10px;
   border: 2px solid var(--primary-hex);
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 .button {

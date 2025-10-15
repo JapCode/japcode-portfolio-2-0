@@ -5,10 +5,7 @@ interface ISocialIconProps {
   className: string;
 }
 
-const SocialIcon: FC<ISocialIconProps> = ({
-  iconName,
-  className,
-}): JSX.Element => {
+const SocialIcon: FC<ISocialIconProps> = ({ iconName, className }) => {
   let icon;
 
   switch (iconName) {

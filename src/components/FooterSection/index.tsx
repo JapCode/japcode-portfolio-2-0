@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import SocialIcon from '../SocialIcon';
 import styles from './footerSection.module.css';
 
-const FooterSection = (): JSX.Element | null => {
+const FooterSection = () => {
   const pathname = usePathname();
   if (pathname.includes('contact')) return null;
 

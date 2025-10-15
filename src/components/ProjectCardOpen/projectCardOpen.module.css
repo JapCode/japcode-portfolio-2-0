@@ -111,7 +111,7 @@
   font-family: var(--font-hubot);
 }
 
-.subInfoLanguages {
+.subTags {
   padding-bottom: 20px;
   display: flex;
   flex-direction: row;
@@ -185,6 +185,22 @@
   display: block;
   height: 50px;
   width: 100%;
+}
+
+.linkFullContent {
+  margin-left: auto;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary-hex);
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+
+.linkFullContent:hover {
+  color: var(--primary-active-hex);
 }
 
 @media (max-width: 768px) {

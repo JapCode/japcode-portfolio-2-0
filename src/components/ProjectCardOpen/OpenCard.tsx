@@ -1,8 +1,8 @@
 /* eslint-disable global-require */
-import { IProjectListData } from '@/types/project';
+import { TProject } from '@/db/schema';
 import formatDate from '@/utils/formatDate';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC } from 'react';
@@ -11,14 +11,14 @@ import style from './projectCardOpen.module.css';
 
 interface IOpenCardProps {
   id: string;
-  data: IProjectListData[];
+  data: TProject[];
 }
 
-const OpenCard: FC<IOpenCardProps> = ({ data, id }): JSX.Element => {
-  const list = data.find((item) => item.id === id);
+const OpenCard: FC<IOpenCardProps> = ({ data, id }) => {
+  const list = data.find((item) => item.id === Number(id));
   const pathname = usePathname();
   if (list == null) return <div>not Found</div>;
-  const { name, date, languages, description, image } = list;
+  const { title, createdAt, tags, description, imageUrl, language } = list;
 
   return (
     <>
@@ -68,42 +68,43 @@ const OpenCard: FC<IOpenCardProps> = ({ data, id }): JSX.Element => {
             className={style['card-image-container']}
             layoutId={`card-image-container-${id}`}
           >
-            <Image
-              className={style.cardImage}
-              src={image}
-              alt="test"
-              width={700}
-              height={250}
-            />
+            <img className={style.cardImage} src={imageUrl} alt="test" />
           </motion.figure>
           <motion.div
             className={style['title-container']}
             layoutId={`title-container-${id}`}
           >
-            <h2>{name}</h2>
+            <h2>{title}</h2>
             <span className={style.subInfoContainer}>
               <motion.span layoutId={`date-container-${id}`}>
-                {formatDate(date)}
+                {formatDate(createdAt.toISOString())}
               </motion.span>
               <motion.span
-                className={style.subInfoLanguages}
-                layoutId={`languages-container-${id}`}
+                className={style.subTags}
+                layoutId={`tags-container-${id}`}
               >
-                {languages.map((element) => (
-                  <p key={element.id}>{element.name}</p>
+                {tags.map((element) => (
+                  <p key={element}>{element}</p>
                 ))}
               </motion.span>
             </span>
           </motion.div>
           <motion.div className={style.contentContainer} animate>
             <ContentComponent.ParagraphContainer>
-              {description.map((element) => (
+              <ContentComponent.Paragraph>
+                {description}
+              </ContentComponent.Paragraph>
+              {/* {description.map((element) => (
                 <ContentComponent.Paragraph
                   key={element.length + Math.random()}
                 >
                   {element}
                 </ContentComponent.Paragraph>
-              ))}
+              ))} */}
+              <Link className={style.linkFullContent} href={`/projects/${id}`}>
+                {language === 'EN' ? 'See details' : 'Ver detalles'}{' '}
+                <SquareArrowOutUpRight size={15} />
+              </Link>
             </ContentComponent.ParagraphContainer>
           </motion.div>
           {/* <div className={style.bottom} /> */}

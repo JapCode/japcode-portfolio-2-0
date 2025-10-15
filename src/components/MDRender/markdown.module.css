@@ -1,0 +1,177 @@
+.markdown-body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--foreground-hex);
+}
+
+/* Párrafos con buen espaciado */
+.markdown-body p {
+  color: var(--foreground-hex);
+  margin: 0.75em 0;
+  font-size: 1rem;
+}
+
+/* Encabezados bien diferenciados */
+.markdown-body h1 {
+  font-size: 2em;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+.markdown-body h2 {
+  font-size: 1.75em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  font-weight: bold;
+}
+
+/* Cita estilo Notion */
+.markdown-body blockquote {
+  color: var(--greyColor-hex);
+  border-left: 3px solid var(--primary-hex);
+  /* background: rgba(var(--foreground-rgb), 0.05); */
+  padding-left: 1rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  margin: 0.75em 0;
+}
+
+/* Listas bien separadas */
+.markdown-body ul,
+.markdown-body ol {
+  margin: 0.75em 1.25em;
+}
+.markdown-body li {
+  margin-bottom: 0.35em;
+}
+
+/* Código en línea */
+.markdown-body code {
+  background: rgba(var(--foreground-rgb), 0.08);
+  color: var(--foreground-hex);
+  font-family: 'Fira Code', monospace;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Bloques de código */
+.markdown-body pre {
+  /* background: rgba(var(--foreground-rgb), 0.08); */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(var(--foreground-rgb), 0.1);
+  border-radius: 6px;
+  padding: 12px;
+  overflow-x: auto;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.markdown-body pre code {
+  background: none;
+  color: var(--foreground-hex);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid rgba(var(--foreground-rgb), 0.15);
+  margin: 1.5rem 0;
+}
+
+.markdown-body ::selection {
+  background: var(--primary-hover-hex);
+  color: var(--foreground-hex);
+}
+
+.markdown-body mark {
+  background-color: var(--secondary-hex);
+  color: var(--foreground-hex);
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+/* Lista base */
+.contains-task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+/* Cada ítem */
+.contains-task-list .task-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 4px 0;
+}
+
+/* Checkbox input */
+.contains-task-list .task-list-item input[type='checkbox'] {
+  appearance: none;
+  width: var(--todo-checkbox-size);
+  height: var(--todo-checkbox-size);
+  border: 2px solid var(--greyColor-hex);
+  border-radius: var(--todo-checkbox-radius);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--todo-transition);
+  position: relative;
+}
+
+/* Hover y focus */
+.contains-task-list .task-list-item input[type='checkbox']:hover,
+.contains-task-list .task-list-item input[type='checkbox']:focus {
+  border-color: var(--primary-hex);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--primary-active-hex), 0.3);
+}
+
+/* Estado marcado */
+.contains-task-list .task-list-item input[type='checkbox']:checked {
+  background: var(--primary-hex);
+  border-color: var(--primary-hex);
+  box-shadow: var(--boxShadowIcon);
+}
+
+/* Check mark centrado */
+.contains-task-list .task-list-item input[type='checkbox']:checked::after {
+  content: '✓';
+  font-size: 12px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -55%);
+}
+
+/* Texto normal */
+.contains-task-list .task-list-item {
+  flex: 1;
+  color: var(--foreground-hex);
+  transition: opacity var(--todo-transition);
+}
+
+/* Texto tachado */
+.contains-task-list .task-list-item input[type='checkbox']:checked + * {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Efecto sutil de "glow" al pasar el mouse en hr */
+.markdown-preview hr:hover {
+  border-color: var(--primary-hex);
+  box-shadow: 0 0 4px var(--primary-hex);
+}
+
+/* Efecto sutil de "glow" al pasar el mouse */
+.markdown-body hr:hover {
+  border-color: var(--primary-hex);
+  box-shadow: 0 0 4px var(--primary-hex);
+}

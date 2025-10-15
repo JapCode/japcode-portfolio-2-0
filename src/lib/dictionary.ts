@@ -1,4 +1,4 @@
-'use Server';
+'use server';
 
 import { IDictionary } from '@/types/dictionaries';
 import 'server-only';

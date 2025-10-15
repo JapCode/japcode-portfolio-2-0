@@ -29,6 +29,7 @@
   },
   "projectsSection": {
     "projects": "Proyectos",
+    "notFound": "En este momento no tengo proyectos para mostrarte",
     "projectsList": [
       {
         "id": "0",

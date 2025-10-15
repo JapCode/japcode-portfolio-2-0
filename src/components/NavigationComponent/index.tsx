@@ -14,10 +14,7 @@ interface INavigationComponent {
   locale: Locale;
 }
 
-const NavigationComponent: FC<INavigationComponent> = ({
-  page,
-  locale,
-}): JSX.Element => {
+const NavigationComponent: FC<INavigationComponent> = ({ page, locale }) => {
   const pageRoutes = [
     {
       label: page.home,
@@ -26,6 +23,10 @@ const NavigationComponent: FC<INavigationComponent> = ({
     {
       label: page.projects,
       route: `/${locale}/projects`,
+    },
+    {
+      label: 'Blog',
+      route: `/${locale}/blog`,
     },
     {
       label: page.contacts,

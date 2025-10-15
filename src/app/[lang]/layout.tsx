@@ -4,9 +4,10 @@ import { Open_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import {
   GenerateStaticParamsReturnType,
-  Locale,
   i18n,
+  Locale,
 } from '../../../i18n.config';
+// @ts-ignore
 import '../../assets/styles/globals.css';
 import Providers from '../providers';
 
@@ -32,22 +33,23 @@ export async function generateStaticParams(): Promise<GenerateStaticParamsReturn
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-const RootLayout = ({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: Locale };
-}): JSX.Element => {
+  params: Promise<{ lang: Locale }>; // <== tipo como promesa
+}) {
+  const { lang } = await params;
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <body
-        className={`${openSans.className} ${hubot.variable} ${mona.variable}  font-sans`}
+        className={`${openSans.className} ${hubot.variable} ${mona.variable}  font-sans layout-body`}
       >
         {/* <NavigationComponent /> */}
         {/* <LeftBarComponent /> */}
         <main>
-          <WrapperContent lang={params.lang}>
+          <WrapperContent lang={lang}>
             <Providers>{children}</Providers>
           </WrapperContent>
         </main>
@@ -55,5 +57,4 @@ const RootLayout = ({
       </body>
     </html>
   );
-};
-export default RootLayout;
+}

@@ -30,6 +30,7 @@ interface Project {
 
 export interface IProjectsSection {
   projects: string;
+  notFound: string;
   projectsList: Project[];
 }
 

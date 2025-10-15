@@ -1,6 +1,6 @@
 'use client';
 
-import { IProjectListData } from '@/types/project';
+import { TProject } from '@/db/schema';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { FC } from 'react';
@@ -8,10 +8,11 @@ import OpenCard from '../ProjectCardOpen/OpenCard';
 import ProjectList from './ProjectList';
 
 interface IProjectsLayoutProps {
-  data: IProjectListData[];
+  // data: IProjectListData[];
+  data: TProject[];
 }
 
-const ProjectsLayout: FC<IProjectsLayoutProps> = ({ data }): JSX.Element => {
+const ProjectsLayout: FC<IProjectsLayoutProps> = ({ data }) => {
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams);
   const id = params.get('id');

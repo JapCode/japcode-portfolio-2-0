@@ -1,14 +1,15 @@
-import { IProjectListData } from '@/types/project';
+import { TProject } from '@/db/schema';
 import { FC } from 'react';
 import ProjectCard from '../ProjectCard';
 import styles from './projectsLayout.module.css';
 
 interface IProjectListProps {
   // selectedId: string;
-  data: IProjectListData[];
+  // data: IProjectListData[];
+  data: TProject[];
 }
 
-const ProjectList: FC<IProjectListProps> = ({ data }): JSX.Element => {
+const ProjectList: FC<IProjectListProps> = ({ data }) => {
   return (
     <ul className={styles.cardListContainer}>
       {data.map((card) => (
